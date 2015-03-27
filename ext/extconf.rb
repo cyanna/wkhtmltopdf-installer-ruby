@@ -8,9 +8,9 @@ def probe
                when /x86_64-darwin.*/
                  OpenStruct.new(script: 'macos', platform: 'osx-cocoa-x86-64', ext: 'pkg')
                when /x86_64-linux/
-                 OpenStruct.new(script: 'linux', platform: 'linux-trusty-amd64', ext: 'deb')
+                 OpenStruct.new(script: 'linux', platform: 'linux-precise-amd64', ext: 'deb')
                when /i[3456]86-linux/
-                 OpenStruct.new(script: 'linux', platform: 'linux-trusty-i386', ext: 'deb')
+                 OpenStruct.new(script: 'linux', platform: 'linux-precise-i386', ext: 'deb')
                else
                  raise NotImplementedError "Unsupported ruby platform #{RUBY_PLATFORM}"
              end
@@ -26,8 +26,8 @@ end
 
 # Some examples:
 # "http://downloads.sourceforge.net/project/wkhtmltopdf/#{version}/wkhtmltox-#{version}_osx-cocoa-x86-64.pkg"
-# "http://downloads.sourceforge.net/project/wkhtmltopdf/#{version}/wkhtmltox-#{version}_linux-trusty-amd64.deb"
-# "http://downloads.sourceforge.net/project/wkhtmltopdf/#{version}/wkhtmltox-#{version}_linux-trusty-i386.deb"
+# "http://downloads.sourceforge.net/project/wkhtmltopdf/#{version}/wkhtmltox-#{version}_linux-precise-amd64.deb"
+# "http://downloads.sourceforge.net/project/wkhtmltopdf/#{version}/wkhtmltox-#{version}_linux-precise-i386.deb"
 def package_url
   "http://downloads.sourceforge.net/project/wkhtmltopdf/#{version}/wkhtmltox-#{version}_#{probe.platform}.#{probe.ext}"
 end
