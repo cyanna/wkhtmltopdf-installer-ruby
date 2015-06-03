@@ -25,11 +25,11 @@ def makefile_dir
 end
 
 # Some examples:
-# "http://downloads.sourceforge.net/project/wkhtmltopdf/#{version}/wkhtmltox-#{version}_osx-cocoa-x86-64.pkg"
-# "http://downloads.sourceforge.net/project/wkhtmltopdf/#{version}/wkhtmltox-#{version}_linux-precise-amd64.deb"
-# "http://downloads.sourceforge.net/project/wkhtmltopdf/#{version}/wkhtmltox-#{version}_linux-precise-i386.deb"
+# "https://s3.amazonaws.com/cyanna-it/wkhtmltopdf-binaries/#{version}/wkhtmltox-#{version}_osx-cocoa-x86-64.pkg"
+# "https://s3.amazonaws.com/cyanna-it/wkhtmltopdf-binaries/#{version}/wkhtmltox-#{version}_linux-precise-amd64.deb"
+# "https://s3.amazonaws.com/cyanna-it/wkhtmltopdf-binaries/#{version}/wkhtmltox-#{version}_linux-precise-i386.deb"
 def package_url
-  "http://downloads.sourceforge.net/project/wkhtmltopdf/#{version}/wkhtmltox-#{version}_#{probe.platform}.#{probe.ext}"
+  "https://s3.amazonaws.com/cyanna-it/wkhtmltopdf-binaries/#{version}/wkhtmltox-#{version}_#{probe.platform}.#{probe.ext}"
 end
 
 # The main Makefile contains settings only. The actual work is done by os-specific Makefile.xxxxx files
